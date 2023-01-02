@@ -1,0 +1,17 @@
+
+<div style="display:flex">
+    <div>
+        
+        <div *ngFor="let color of colorArr index as i"  style="display:flex;flex-direction:column">
+
+    <h1 style="border-radius: 10px;"  [ngClass]="value ==i+1 ? color : ''">{{color.toUpperCase()}}</h1>
+            
+        
+    </div>
+    </div>
+
+
+    <div style="font-size: 500px;border-radius:25pix;" [ngClass]="colorArr[value-1]">{{colorArr[value-1]}}</div>
+  
+
+</div>
