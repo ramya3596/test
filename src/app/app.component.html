@@ -3,10 +3,12 @@
 
 <div style="text-align: center;"> 
 
-    <button>1.Notes App</button>
-    <button>2.Weather App</button>
+    <button (click)="changeToNotesApp()">1.Notes App</button>
+    <button (click)="changeToWeatherApp()">2.Weather App</button>
     <button>3.Tic Toc Toe Game</button>
     <button>4.ToDo list App</button>
 
 
+
+    <app-notes-app *ngIf="title==='1'"></app-notes-app>
 </div>

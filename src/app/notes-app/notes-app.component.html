@@ -1,0 +1,21 @@
+
+
+
+
+<div *ngFor="let note of notesData index as i">
+
+    <div (click)="chooseNotes(i)">{{note.name}} -</div>
+    <input *ngIf="selected === i+1" #dataChanged type="text" value="{{note.data}}" (keyup)="changeData(i, dataChanged.value)"> 
+
+</div>
+
+
+<button (click)="createNewNotes()">createNewNotes</button>
+
+
+
+{{notesData | json}}
+
+
+
+

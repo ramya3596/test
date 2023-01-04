@@ -8,7 +8,17 @@ import { interval } from 'rxjs';
 })
 export class AppComponent {
   
-  title=0
+  title : string="0"
+
+
+  changeToNotesApp(){
+    this.title = "1"
+  }
+
+  changeToWeatherApp(){
+    this.title = "2"
+  }
+
   } 
   
     
