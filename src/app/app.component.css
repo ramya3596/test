@@ -1,1 +1,26 @@
 
+.button-grp {
+    text-align: center;
+    /* text-decoration: none; */
+    font-size: x-large;
+    width: 150px;
+    display: block;
+  }
+.button1{
+    width: 250px;
+    background-color: white;
+}
+.button2{
+    width: 250px;
+    background-color: white;
+}
+
+.button3{
+    width: 250px;
+    background-color: white;
+}
+.button4{
+    width: 250px;
+    background-color: white;
+}
+ 

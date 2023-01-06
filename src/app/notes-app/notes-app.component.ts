@@ -16,9 +16,17 @@ export class NotesAppComponent {
 
   selected = 0
 
-  createNewNotes(){
+  createNewNotes(update:any,value:any){
 
-    let notesName  = prompt("Enter new Notes name :")
+    let notesName
+
+    if(update){
+
+     notesName  = prompt("Enter updated name :")
+  }else{
+     notesName  = prompt("Enter new name :")
+  }
+
 
     let exists = false
 
@@ -37,10 +45,11 @@ export class NotesAppComponent {
       }
       
       if(typeof(notesName) === 'string'){
-      this.notesData.push(
+      if(!update){this.notesData.push(
         {name: notesName,data:" "}
         
         )
+      }else{this.notesData[value].name=notesName}
       }
   }
 
@@ -50,5 +59,15 @@ export class NotesAppComponent {
 
       changeData(value:any, changedData:any){
           this.notesData[value].data = changedData
-      }          
+      } 
+      
+      renameNotes(value:any,changedName:any){
+        this.notesData[value].name=changedName
+
+      }
+      collectName(value:any){
+        return this.createNewNotes(true,value)
+      }
 }
+
+

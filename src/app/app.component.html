@@ -1,14 +1,19 @@
 
 
 
-<div style="text-align: center;"> 
+<div class="div" style="text-align:center;"> 
 
-    <button (click)="changeToNotesApp()">1.Notes App</button>
-    <button (click)="changeToWeatherApp()">2.Weather App</button>
-    <button>3.Tic Toc Toe Game</button>
-    <button>4.ToDo list App</button>
+ <div class="button-grp">
+    <button class="button1" (click)="changeToNotesApp()">1.Notes App</button>
+    <button  class="button2"  (click)="changeToWeatherApp()">2.Weather App</button>
+    <button  class="button3" >3.Tic Toc Toe Game</button>
+    <button  class="button4">4.ToDo list App</button>
+
+</div>
+    
 
 
 
     <app-notes-app *ngIf="title==='1'"></app-notes-app>
 </div>
+
