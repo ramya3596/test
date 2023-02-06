@@ -1,19 +1,18 @@
 
+<div *ngIf="concept == 0">
 
-
-<div class="div" style="text-align:center;"> 
-
- <div class="button-grp">
-    <button class="button1" (click)="changeToNotesApp()">1.Notes App</button>
-    <button  class="button2"  (click)="changeToWeatherApp()">2.Weather App</button>
-    <button  class="button3" >3.Tic Toc Toe Game</button>
-    <button  class="button4">4.ToDo list App</button>
-
-</div>
+    <button (click)="htmlConcept()">Html</button>
+    <button (click)="cssConcept()">css</button>
+    <button (click)="jsConcept()">javascript</button>
+    <button (click)="angularConcept()">angular</button>
     
-
-
-
-    <app-notes-app *ngIf="title==='1'"></app-notes-app>
 </div>
+
+<app-html *ngIf="concept == 1"  (data) ="GetChildData($event)"></app-html>
+
+<app-css *ngIf="concept == 2"></app-css>
+
+<app-javascript *ngIf="concept == 3"></app-javascript>
+
+<app-angular *ngIf="concept == 4"></app-angular>
 

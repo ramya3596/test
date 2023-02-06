@@ -1,0 +1,26 @@
+
+<button (click)="sendValues()"> Go Back </button>
+
+<div *ngIf="topic==0">
+
+    <h1> Index: </h1>
+    
+    <button (click)="headingTopic()">1.Heading tags</button>
+
+    <button (click)="paragraphTopic()">2.paragraph tag</button>
+    
+</div>
+
+<div *ngIf="topic == 1"> 
+
+    <p>HTML headings are defined with the h1 to h6 tags.
+
+        h1 defines the most important heading. h6 defines the least important heading.</p>
+
+</div>
+
+<div *ngIf="topic == 2"> 
+
+    <p>about paragraph tag</p>
+
+</div>

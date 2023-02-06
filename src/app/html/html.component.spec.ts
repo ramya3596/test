@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NotesAppComponent } from './notes-app.component';
+import { HTMLComponent } from './html.component';
 
-describe('NotesAppComponent', () => {
-  let component: NotesAppComponent;
-  let fixture: ComponentFixture<NotesAppComponent>;
+describe('HTMLComponent', () => {
+  let component: HTMLComponent;
+  let fixture: ComponentFixture<HTMLComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NotesAppComponent ]
+      declarations: [ HTMLComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NotesAppComponent);
+    fixture = TestBed.createComponent(HTMLComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

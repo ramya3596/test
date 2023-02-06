@@ -8,17 +8,31 @@ import { interval } from 'rxjs';
 })
 export class AppComponent {
   
-  title : string="0"
 
 
-  changeToNotesApp(){
-    this.title = "1"
+  concept : number = 0
+
+  GetChildData(data:any){
+    console.log(data)
   }
 
-  changeToWeatherApp(){
-    this.title = "2"
+  htmlConcept(){
+    this.concept = 1
   }
 
+  cssConcept(){
+    this.concept = 2
+  }
+
+  jsConcept(){
+    this.concept = 3
+  }
+
+  angularConcept(){
+    this.concept = 4
+  }
+
+  
   } 
   
     

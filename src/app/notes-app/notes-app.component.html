@@ -2,20 +2,34 @@
 
 
 
-<div  *ngFor="let note of notesData index as i">
+<div  *ngFor="let note of notesData index as i" >
  
-    <div (click)="chooseNotes(i)">{{note.name}} -</div>
-  <button (click)="collectName(i)" #name>rename</button>
+    <div *ngIf="note !== null">
+        {{note}}
+    <div id="name" (click)="chooseNotes(i)">{{note.name}} -</div>
+        <button (click)="collectName(i)" #name>rename</button>
+        <button (click)="deleteNote(i)">Delete</button>
 
 
-<input *ngIf="selected === i+1" #dataChanged type="text" value="{{note.data}}" (keyup)="changeData(i, dataChanged.value)"> 
+        <input *ngIf="selected === i+1" #dataChanged type="text" value="{{note.data}}" (keyup)="changeData(i, dataChanged.value)"> 
 
+    </div>
 </div>
 
 
 <button class="create"(click)="createNewNotes(false,-1)">createNewNotes</button>
 
-<!-- {{notesData | json}} -->
+<h1 id="test" (click)="changeColor()">
+
+    Test
+</h1>
+
+<div id="loaderStyle"> </div>
+
+
+
+
+{{notesData | json}}
 
 <!-- {{notesData }} -->
 
