@@ -10,9 +10,9 @@
 
 <app-html *ngIf="concept == 1"  (myOutput) ="GetChildData($event)"></app-html>
 
-<app-css *ngIf="concept == 2"></app-css>
+<app-css *ngIf="concept == 2" (myOutput) ="GetChildData($event)"></app-css>
 
-<app-javascript *ngIf="concept == 3"></app-javascript>
+<app-javascript *ngIf="concept == 3" (myOutput) ="GetChildData($event)"></app-javascript>
 
-<app-angular *ngIf="concept == 4"></app-angular>
+<app-angular *ngIf="concept == 4" (myOutput) ="GetChildData($event)"></app-angular>
 
