@@ -13,6 +13,8 @@ export class AppComponent {
   concept : number = 0
 
   GetChildData(data:any){
+
+    this.concept = Number(data)
     console.log(data)
   }
 

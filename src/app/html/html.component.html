@@ -17,6 +17,18 @@
 
         h1 defines the most important heading. h6 defines the least important heading.</p>
 
+     <div *ngFor="let htag of htags index as i">
+         <button (click)="htagEffect(i+1)">{{htag}}</button>  
+    </div>
+
+    <div>
+        <h1 *ngIf="activeHtag == 1">Heading1...</h1>
+        <h2 *ngIf="activeHtag == 2">Heading2...</h2>
+        <h3 *ngIf="activeHtag == 3">Heading3...</h3>
+        <h4 *ngIf="activeHtag == 4">Heading4...</h4>
+        <h5 *ngIf="activeHtag == 5">Heading5...</h5>
+        <h6 *ngIf="activeHtag == 6">Heading6...</h6>
+    </div>
 </div>
 
 <div *ngIf="topic == 2"> 
