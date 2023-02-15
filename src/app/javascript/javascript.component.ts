@@ -54,61 +54,96 @@ this.state=2
 }
   }
 
-  displayToString: boolean = false
-  displayReverse: boolean = false
-  displaySort:boolean = false
-  displayPush:boolean = false
-  displayPop:boolean = false
+  displayArray =[false,false,false,false,false]
+
+  displayNamesArray = ["toString","sort","reverse","pop","push"]
+
+  // displayMap = {
+  //   "displayToString":false,
+  //   "displayReverse" : false
+  // }
+
+  // displayToString: boolean = false
+  // displayReverse: boolean = false
+  // displaySort:boolean = false
+  // displayPush:boolean = false
+  // displayPop:boolean = false
  
  
-  toString(){
-    this.displayReverse = false
-    this.displaySort =false
-    this.displayPush=false
-    this.displayPop = false
-
-    this.displayToString = true
-  }
-
-  sort(){
-
-    this.displaySort =true
-    this.displayPush=false
-    this.displayPop = false
-
-    this.displayReverse = false
-
-    this.displayToString = false
-
-  }
-
-  reverse(){
-    this.displayToString = false
-    this.displaySort =false
-    this.displayPush=false
-    this.displayPop = false
-
-
-    this.displayReverse = true
-
-  }
-
-  join(){
+  // toString(){
+  //  for (let index = 0; index < this.displayArray.length; index++) {
     
-  }
+  //   if(index == 0){
+  //     this.displayArray[index] = true
+  //   }else{
+  //     this.displayArray[index] = false
 
-  pop(){
-    this.displayPop = true
+  //   }
+    
+  //  }
+  // }
 
-  }
+  // sort(){
 
-  push(){
-    this.displayPop = false
+  //   for (let index = 0; index < this.displayArray.length; index++) {
+    
+  //     if(index == 1){
+  //       this.displayArray[index] = true
+  //     }else{
+  //       this.displayArray[index] = false
+  
+  //     }
+      
+  //    }
 
-    this.displayPush=true
+  // }
+
+  // reverse(){
+  //   for (let index = 0; index < this.displayArray.length; index++) {
+    
+  //     if(index == 2){
+  //       this.displayArray[index] = true
+  //     }else{
+  //       this.displayArray[index] = false
+  
+  //     }
+      
+  //    }
+
+  // }
+
+  // join(){
+    
+  // }
+
+  // pop(){
+  //   for (let index = 0; index < this.displayArray.length; index++) {
+    
+  //     if(index == 3){
+  //       this.displayArray[index] = true
+  //     }else{
+  //       this.displayArray[index] = false
+  
+  //     }
+      
+  //    }
+
+  // }
+
+  // push(){
+  //   for (let index = 0; index < this.displayArray.length; index++) {
+    
+  //     if(index == 4){
+  //       this.displayArray[index] = true
+  //     }else{
+  //       this.displayArray[index] = false
+  
+  //     }
+      
+  //    }
 
     
-  }
+  // }
 
   pushElement(){
 
@@ -119,6 +154,22 @@ this.state=2
 
   shift(){
     
+  }
+
+
+
+  commonMethodToDisplay(val:any){
+    for (let index = 0; index < this.displayArray.length; index++) {
+    
+      if(index == val){
+        this.displayArray[index] = true
+      }else{
+        this.displayArray[index] = false
+  
+      }
+      
+     }
+
   }
 
 }

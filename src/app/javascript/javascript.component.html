@@ -38,49 +38,61 @@
                     
                    <h1>
                        {{array | json}}
-
-                   </h1> 
-
-                   <p> you can perform below actions </p>
+                       
+                    </h1> 
+                    
+                    <p> you can perform below actions </p>
+                    
+                    
+                    
+                    <div *ngFor="let method of displayArray index as i">  
+                        
+                        <button (click)="commonMethodToDisplay(i)">{{displayNamesArray[i]}}</button>
+                    </div>
                 
+                        <h1 *ngIf="displayArray[0]">
+                            {{array.toString() | json}}
+     
+                        </h1> 
 
-                   <button (click)="toString()">toString</button> <br>
-                   <h1 *ngIf="displayToString">
-                       {{array.toString() | json}}
+                        <h1 *ngIf="displayArray[1]">
+                            {{array.sort() | json}}
+    
+                       </h1>
 
-                   </h1> 
+                       <h1 *ngIf="displayArray[2]">
+                        {{array.reverse() | json}}
+ 
+                    </h1> 
 
-                   <button (click)="sort()">sort</button><br>
+                    <h1 *ngIf="displayArray[3]">
+                        {{array.pop() | json}}
+    
+                       </h1>
 
-                   <h1 *ngIf="displaySort">
-                        {{array.sort() | json}}
-
-                   </h1>
-
-                   <button (click)="reverse()">reverse</button><br>
-                   <h1 *ngIf="displayReverse">
-                       {{array.reverse() | json}}
-
-                   </h1> 
-
-                   <button (click)="join()">join</button><br>
-                   <button (click)="pop()">pop</button><br>
-
-                   <h1 *ngIf="displayPop">
-                    {{array.pop() | json}}
-
-                   </h1>
-                   <button (click)="push()">push</button><br>
-
-                   <div *ngIf="displayPush">
+                       <div *ngIf="displayArray[4]">
                         <p> Please enter new element to push into the array:</p>
                     <input id="pushingEle" >
                     <button (click)="pushElement()">Push</button>
 
                    </div>
 
+
+
+                
+
+
+                 
                    
-                   <button (click)="shift()">shift</button><br>
+
+                  
+
+                  
+                  
+
+                   
+
+                   
 
                     
                     
