@@ -39,4 +39,8 @@ export class HTMLComponent {
     this.topic = 2
   }
 
+  goBack(){
+    this.topic = 0
+  }
+
 }

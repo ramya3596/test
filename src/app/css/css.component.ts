@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-css',
@@ -33,5 +33,37 @@ colorTopic(){
 
 bgcolorTopic(){
   this.topic = 2
+}
+  @ViewChild('margin')
+  margin!: ElementRef;
+marginpx:any = 0
+
+marginTopic(){
+  this.topic = 3
+
+  // this.margin = <HTMLElement>(document.getElementById("marginButton"))
+  // this.margin = this.marginpx+"px"
+  
+  console.log(this.margin)
+  console.log(this.margin)
+  
+}
+
+marginIncrement(){
+  this.marginpx++
+  this.margin.nativeElement.style.margin = this.marginpx+"px"
+  console.log(this.margin)
+  console.log(this.marginpx)
+}
+
+marginDecrement(){
+  this.marginpx--
+  console.log(this.margin)
+  console.log(this.marginpx)
+}
+
+
+goBack(){
+  this.topic = 0
 }
 }

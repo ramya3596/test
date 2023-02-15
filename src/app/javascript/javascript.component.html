@@ -1,1 +1,61 @@
-<p>javascript works!</p>
+
+
+
+<div>
+
+    <button (click)="topics()">Arrays</button>
+
+    <div *ngIf="topic==1">
+        
+        <div *ngIf="state==0">
+            
+            <p>pls enter size of Array:</p>
+            <input #arraysize value="{{arraySize}}" (keyup)="setArraySize(arraysize.value)">
+            
+            <button (click)="createArray()">click here to confirm</button>
+            
+        </div>
+        
+        <div *ngIf="state==1">
+            
+            <p> pls add data into created array</p>
+            
+            <div *ngFor="let ele of array index as i">
+                <input id="arrayEle_{{i}}"  [(value)]="array[i]" >
+                <button (click)="addElement(i)">Add</button>
+                
+                
+                
+            </div>
+            
+        </div>
+            <div *ngIf="state==2">
+            
+                <p> your array : </p>
+                
+               
+                   
+                    
+                   <h1>
+                       {{array | json}}
+
+                   </h1> 
+
+                   <button (click)="toString()">toString</button>
+                   <h1 *ngIf="displayToString">
+                       {{array.toString() | json}}
+
+                   </h1> "
+                    
+                    
+
+                    
+                </div>
+            
+        
+        
+    </div>
+    
+    
+    
+</div>

@@ -1,5 +1,9 @@
 
-<button (click)="sendValues()"> Go Back </button>
+<button (click)="sendValues()"> Go to Home </button>
+
+<button (click)="goBack()"> Go Back</button>
+
+<div [ngClass]="topic==0?'somestyle':'somestyle1'">test</div>
 
 <div *ngIf="topic==0">
 
@@ -8,6 +12,9 @@
     <button (click)="colorTopic()">1.Color</button>
 
     <button (click)="bgcolorTopic()">2.BG Color</button>
+
+
+    <button (click)="marginTopic()">3.Margin</button>
     
 </div>
 
@@ -21,5 +28,17 @@
 <div *ngIf="topic == 2"> 
 
     <p>bg color property</p>
+
+</div>
+
+<div *ngIf="topic == 3"> 
+
+
+    <button (click)="marginIncrement()">+</button>
+    <button (click)="marginDecrement()">-</button>
+    <p #margin>margin</p>
+
+    <button>MarginTop</button>
+    
 
 </div>
