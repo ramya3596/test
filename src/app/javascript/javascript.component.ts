@@ -55,8 +55,70 @@ this.state=2
   }
 
   displayToString: boolean = false
+  displayReverse: boolean = false
+  displaySort:boolean = false
+  displayPush:boolean = false
+  displayPop:boolean = false
+ 
+ 
   toString(){
+    this.displayReverse = false
+    this.displaySort =false
+    this.displayPush=false
+    this.displayPop = false
+
     this.displayToString = true
+  }
+
+  sort(){
+
+    this.displaySort =true
+    this.displayPush=false
+    this.displayPop = false
+
+    this.displayReverse = false
+
+    this.displayToString = false
+
+  }
+
+  reverse(){
+    this.displayToString = false
+    this.displaySort =false
+    this.displayPush=false
+    this.displayPop = false
+
+
+    this.displayReverse = true
+
+  }
+
+  join(){
+    
+  }
+
+  pop(){
+    this.displayPop = true
+
+  }
+
+  push(){
+    this.displayPop = false
+
+    this.displayPush=true
+
+    
+  }
+
+  pushElement(){
+
+   this.array.push((<HTMLInputElement>document.getElementById("pushingEle")).value)
+
+
+  }
+
+  shift(){
+    
   }
 
 }
