@@ -1,11 +1,98 @@
 
-<button (click)="sendValues()"> Go Home</button>
 
-<button (click)="goBack()">Go Back </button>
+<div>
 
+    <button (click)="topics()">Arrays</button>
 
-<div *ngIf="topic==0">
-    <h1> Index: </h1>
+    <div *ngIf="topic==1">
+        
+        <div *ngIf="state==0">
+            
+            <p>pls enter size of Array:</p>
+            <input #arraysize value="{{arraySize}}" (keyup)="setArraySize(arraysize.value)">
+            
+            <button (click)="createArray()">click here to confirm</button>
+            
+        </div>
+        
+        <div *ngIf="state==1">
+            
+            <p> pls add data into created array</p>
+            
+            <div *ngFor="let ele of array index as i">
+                <input id="arrayEle_{{i}}"  [(value)]="array[i]" >
+                <button (click)="addElement(i)">Add</button>
+                
+                
+                
+            </div>
+            
+        </div>
+            <div *ngIf="state==2">
+            
+                <p> your array : </p>
+                
+               
+    
+                    
+                   <h1>
+                       {{array | json}}
+                       
+                    </h1> 
+                    
+                    <p> you can perform below actions </p>
+                    
+                    
 
+                    
+                    <div *ngFor="let method of displayArray index as i">  
+                        
+                        <button (click)="commonMethodToDisplay(i)">{{displayNamesArray[i]}}</button>
+                    </div>
+                
+                        <h1 *ngIf="displayArray[0]">
+                            {{array.toString() | json}}
+     
+                        </h1> 
+
+                        <h1 *ngIf="displayArray[1]">
+                            {{array.sort() | json}}
+    
+                       </h1>
+
+                       <h1 *ngIf="displayArray[2]">
+                        {{array.reverse() | json}}
+ 
+                    </h1> 
+
+                    <h1 *ngIf="displayArray[3]">
+                        {{array.pop() | json}}
+    
+                       </h1>
+
+                       <div *ngIf="displayArray[4]">
+                        <p> Please enter new element to push into the array:</p>
+                    <input id="pushingEle" >
+                    <button (click)="pushElement()">Push</button>
+ 
+                   </div>
+                  
+                  
+
+                   
+
+                   
+
+                    
+                    
+
+                    
+                </div>
+            
+        
+        
+    </div>
+    
+    
     
 </div>
