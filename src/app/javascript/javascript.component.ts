@@ -19,6 +19,7 @@ export class JavascriptComponent {
 
 
 array:any = []
+strArray:any = []
 value:any
 arr:any
 lastEle: any;
@@ -37,16 +38,22 @@ lastEle: any;
   createArray(){
     this.array = new Array(this.arraySize)
 
+    for (let index = 0; index < this.array.length; index++) {
+      this.strArray.push(this.array[index])
+      
+    }
+
     this.state = 1
 
     
     
   }
   
-  addElement(index:any){
-    this.test = (<HTMLInputElement>document.getElementById("arrayEle_"+index)).value
+  addElement(val:any){
+    this.test = (<HTMLInputElement>document.getElementById("arrayEle_"+val)).value
 
-    this.array[index] = this.test
+
+    this.array[val] = this.test
 console.log(this.array)
 
 for (let index = 0; index < this.array.length; index++) {
@@ -167,6 +174,7 @@ this.state=2
 
   lenvar : any
 
+  marginleft:any =0
   commonMethodToDisplay(val:any){
     for (let index = 0; index < this.displayArray.length; index++) {
     
@@ -194,18 +202,19 @@ this.state=2
        
         if(val==3){
          
+       
+          if(this.array.length!=1){
           this.items.last.nativeElement.firstElementChild.style.color = "red"
-          this.lenvar = this.array.length-1
+          }
+          else {
+            this.items.last.nativeElement.children[1].style.color = "red"
 
-          // @ViewChild("element_"+this.lenvar) private test1 : ElementRef
+          }
+
           
-          // test1.nativeElement        
-          // console.log("element_"+this.lenvar)
-          // console.log(document)
-          // this.lastEle =  (document.getElementById("element_"+ this.lenvar))
+         
 
-          // console.log(this.lastEle.nativeElement.style.color)
-
+        
          }
 
 
