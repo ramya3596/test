@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChild, ViewChildren, ViewContainerRef } from '@angular/core';
 
 @Component({
   selector: 'app-javascript',
@@ -15,9 +15,13 @@ export class JavascriptComponent {
 
   state : any =0
 
-  array:any
-  value:any
-  arr:any
+ @ViewChildren('myitems') items!: QueryList<ElementRef> 
+
+
+array:any = []
+value:any
+arr:any
+lastEle: any;
 
   topics(){
     this.topic = 1
@@ -26,14 +30,16 @@ export class JavascriptComponent {
   setArraySize(val:any){
     this.arraySize = Number(val)
   }
-
+  
   test:any 
   check:boolean =true
+
   createArray(){
     this.array = new Array(this.arraySize)
 
     this.state = 1
 
+    
     
   }
   
@@ -159,6 +165,7 @@ this.state=2
   }
 
 
+  lenvar : any
 
   commonMethodToDisplay(val:any){
     for (let index = 0; index < this.displayArray.length; index++) {
@@ -171,22 +178,42 @@ this.state=2
       }
        if(val==1){
 
-        this.value=[2,7,21,35,6]
-        for(let index=1;index<this.value.length;index++){
+        for(let index=1;index<this.array.length;index++){
           for(let count=0;count<index;count++){
-            if(this.value[index] <this.value[count]){
-              this.arr=this.value[index]
-              this.value[index]=this.value[count]
-              this.value[count]=this.arr
+            if(this.array[index] <this.array[count]){
+              this.arr=this.array[index]
+              this.array[index]=this.array[count]
+              this.array[count]=this.arr
               
             }
           }
         }
 
-      this.array=this.value
+        }
+
        
+        if(val==3){
          
+          this.items.last.nativeElement.firstElementChild.style.color = "red"
+          this.lenvar = this.array.length-1
+
+          // @ViewChild("element_"+this.lenvar) private test1 : ElementRef
+          
+          // test1.nativeElement        
+          // console.log("element_"+this.lenvar)
+          // console.log(document)
+          // this.lastEle =  (document.getElementById("element_"+ this.lenvar))
+
+          // console.log(this.lastEle.nativeElement.style.color)
+
          }
+
+
+
+
+
+
+         
       }
       
      }

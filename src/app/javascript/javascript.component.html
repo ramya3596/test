@@ -35,8 +35,12 @@
                
     
                     
-                   <h1>
-                       {{array | json}}
+                <h1 style="display: inline;" #myitems *ngFor="let ele of array index as i" >
+                       
+                      <span *ngIf="i==0">[</span>  <span id="element_{{i}}">
+                        {{ele}}
+                      </span> <span *ngIf="i!=array.length-1">,</span>
+                      <span *ngIf="i==array.length-1">]</span>
                        
                     </h1> 
                     
@@ -74,8 +78,8 @@
                         <p> Please enter new element to push into the array:</p>
                     <input id="pushingEle" >
                     <button (click)="pushElement()">Push</button>
- 
-                   </div>
+                    
+                </div>
                   
                   
 
