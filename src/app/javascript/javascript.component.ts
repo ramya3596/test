@@ -69,9 +69,9 @@ this.state=2
 }
   }
 
-  displayArray =[false,false,false,false,false]
+  displayArray =[false,false,false,false,false,false]
 
-  displayNamesArray = ["toString","sort","reverse","pop","push"]
+  displayNamesArray = ["toString","sort","reverse","pop","push","shift"]
 
   // displayMap = {
   //   "displayToString":false,
@@ -167,13 +167,14 @@ this.state=2
 
   }
 
-  shift(){
+  // shift(){ 
     
-  }
+  // }
 
 
   lenvar : any
-
+ 
+ 
   marginleft:any =0
   commonMethodToDisplay(val:any){
     for (let index = 0; index < this.displayArray.length; index++) {
@@ -201,7 +202,7 @@ this.state=2
 
        
         if(val==3){
-         
+          
        
           if(this.array.length!=1){
           this.items.last.nativeElement.firstElementChild.style.color = "red"
@@ -212,8 +213,8 @@ this.state=2
           }
 
           
-         
-
+         }
+         if(val==5){
         
          }
 
